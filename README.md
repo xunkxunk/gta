@@ -1,6 +1,6 @@
 # Protocole d’installation du Sigfox
 ## Table des matières
-1. [Lien](#1-lien)
+1. [Bibliographie](#1-bibliographie)
 2. [Installation du programme](#2-installation-du-programme)
 	1. [Télécharger](#21-télécharger)
 	2. [Configurer](#22-configurer)
@@ -13,7 +13,10 @@
 3. [Réglage du taux de transfert des données](#3-Réglage-du-taux-de-transfert-des-données)
 4. [Création d'un compte SIGFOX](#4-Création-dun-compte-SIGFOX)
 
-## 1. Lien
+
+## 1. Bibliographie
+Dans cette section, différents lien vers des sites internet relatifs au projet
+
 Site officiel arduino 
 - https://www.arduino.cc/en/Guide/MKRFox1200
 - https://www.arduino.cc/en/software
@@ -29,8 +32,21 @@ Backend Sigox : réception des données
 - https://backend.sigfox.com/welcome/news
 
 ## 2. Installation du programme
-Le logicial Arduino IDE fera l'interface entre votre ordinateur portable et l'Arduino.
-Il sert à programmer et à téléverser le programme dans le système et aussi à afficher les données
+
+Le logicial __Arduino IDE__ (ou simplement __Arduino__) fera l'interface entre votre ordinateur portable et la carte Arduino.
+Il permet de:
+1) Créer des programme informatique dans le langage C
+2) De les téléverser (les "envoyer") vers la carte Arduino
+3) Enfin, d'afficher les données que la carte nous renvoie, suite à l'execution du programme C.
+
+Ex: Je créer un programme informatique pour dire à ma carte de faire une action simple "Fait clignoter la LED qui se trouve sur la carte" (cf. [Votre premier croquis](#23-votre-premier-croquis))
+1) Je vais écrire ce programme, en utilisant le langage informatique C
+2) Une fois crée, je vais le téléverser vers la carte : Je sauvegarde mon programme sur la carte afin que celle-ci l'exécute
+3) La carte exécute le programme et peut (ou pas), me renvoyer une information "j'ai fait clignoter la LED"
+
+Dans ce chapitre, nous allons télécharger la version du logiciel correspondant à notre système informatique.
+Nous allons le configurer afin qu'il puisse échanger correctement le(s) programme(s) vers la carte Arduino.
+Enfin, nous allons préparer le logiciel, en installant différent composants spécifiques à notre carte Arduino (MKRFox1200), ainsi qu'aux différents programme que nous allons avoir besoin dans la suite du tutoriel.
 
 ### 2.1 Télécharger
 Vous pouvez le télécharger depuis https://www.arduino.cc/en/software
@@ -43,9 +59,10 @@ Ou choisir votre programme selon votre système (/!\ Attention, les liens ci-des
  
 ### 2.2 Configurer
 #### 2.2.1 Ajouter le noyau SAMD Core
-Si vous souhaitez programmer votre MKRFOX1200 hors ligne depuis le logiciel Arduino IDE, vous devez y ajouter le noyau __SAMD Core__. 
+Afin que le logiciel __Arduino IDE__ puisse échanger avec la carte MKRFox1200, il est indispenable qu'ils parlent la même langue.
+Pour ce faire, il faut ajouter au logiciel un noyau correspondant au type de carte "MKRFox1200" : le noyau __SAMD Core__. 
 
-Une fois l'application Arduino IDE installé, 
+Une fois l'application __Arduino IDE__ installé, 
 - selectionner le menu __Outils (Tools)__, 
 - puis __Type de cartes (Boards)__,
 - __Gestionnaire de cartes (Boards Manager)__
@@ -57,9 +74,11 @@ Une fois l'application Arduino IDE installé,
 Pour plus d'informations sur les noyaux, consultez le guide sur l'[installation de noyaux Arduino supplémentaires](https://www.arduino.cc/en/guide/cores).
 
 #### 2.2.2 Ajouter les librairies
-Maintenant il faut télécharger et installer les librairies que j'ai utilisées pour compiler le programme:
+Maintenant il faut télécharger et installer les librairies que j'ai utilisées pour compiler le programme des balances.
+De la même facon que le Noyau permet au logiciel de parler la même langue que la carte, les librairies vont permettent d'étendre les capacités de nos programmes.
+Nous pourrons alors faire des taches plus spécifique que "Faire clignoter la carte Arduino", comme "Envoyer un signal via le réseau SigFox".
 
-Les librairies se trouvent dans l'archive [librairies.zip](https://www.dropbox.com/sh/i5s8ciy7g694kg1/AAD1p8ZgO66AvzONasxKT_Pza/libraries/libraries.zip?dl=1) (protégé par mot de passe)
+Les librairies se trouvent dans l'archive [librairies.zip](https://www.dropbox.com/sh/i5s8ciy7g694kg1/AAD1p8ZgO66AvzONasxKT_Pza/libraries/libraries.zip?dl=1) (protégée par mot de passe)
 
 Une fois téléchargé, copier le contenu du ZIP dans un dossier qu'on nomme _emplacement du carnet de croquis_, par exemple dans  __D:\Arduino__ (cf. ci dessous)
 
@@ -77,11 +96,12 @@ De retour dans le logiciel Aduino IDE;
 
 Cocher __OK__
 
-Les libraires sont maintenant installées.
+__Les libraires sont maintenant installées.__
 
 Maintenant que le noyau __SAMD Core__ est installé ainsi que les librairies, vous pouvez connecter la carte à l'ordinateur à l'aide d'un câble USB standard. La toute première fois que votre ordinateur peut passer par le nouveau processus d'installation du matériel.
 
 #### 2.2.3 Selectionner le type de carte et le port
+Pour indiquer au logicel __Arduino IDE__ par quel moyen envoyer nos programmes sur la carte, nous devons lui indiquer quel type de carte (Arduino MKRFox1200) grâce au noyau __SAMD Core__ et quel port utiliser, pour ce faire;
 
 Sélectionnez votre type de carte:
 - Dans __Outils (Tools)__
@@ -103,10 +123,12 @@ Selectionnez votre port:
 ![Choix du port](blob/master/chois%20port.png) 
 
 ### 2.3 Votre premier croquis
+Un croquis est simplement un programme en langage C, que nous allons envoyer sur la carte, afin que la carte puisse elle-même l'éxecuter.
+
 Ouvrez votre premier croquis __Blink__
 Ce croquis fait simplement clignoter la LED intégrée connectée à la broche numérique LED_BUILTIN à un rythme d'une seconde pour allumer et éteindre, mais il est très utile de pratiquer le chargement d'un croquis dans le logiciel Arduino (IDE) et le téléchargement sur la carte connectée.
 
-Toujours dans le logiciel Arduino IDE;
+Toujours dans le logiciel __Arduino IDE__;
 - Rendez-vous dans __Fichier__
 - puis __Exemple__
 - puis sélectionnez __01. Basique__ 
@@ -115,7 +137,7 @@ Toujours dans le logiciel Arduino IDE;
 ![Exemple basic - Blink](blob/master/exemple_basic.png) 
 
 
-Vérifier (1er bouton) 
+Vérifier (1er bouton)
 ![Vérifier](blob/master/veriff.png) 
 
 Puis Téléverser (2ième bouton ou Ctrl + U) votre premier programme :
