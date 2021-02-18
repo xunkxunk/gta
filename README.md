@@ -52,8 +52,7 @@ Enfin, nous allons préparer le logiciel, en installant différent composants sp
 Vous pouvez le télécharger depuis https://www.arduino.cc/en/software
 
 Ou choisir votre programme selon votre système (/!\ Attention, les liens ci-dessous ne sont peut-être plus à jour):
-- Windows 7: [Executable (.exe)](https://downloads.arduino.cc/arduino-1.8.13-windows.exe) ou [Archive (.zip)](https://downloads.arduino.cc/arduino-1.8.13-windows.zip)
-- [Windows app 8.1 or 10](https://www.microsoft.com/store/apps/9nblggh4rsd8?ocid=badge)
+- Windows 7 et suivant : [Executable (.exe)](https://downloads.arduino.cc/arduino-1.8.13-windows.exe) ou [Archive (.zip)](https://downloads.arduino.cc/arduino-1.8.13-windows.zip)
 - [Linux 64 bits](https://downloads.arduino.cc/arduino-1.8.13-linux64.tar.xz)
 - [Mac OS X](https://downloads.arduino.cc/arduino-1.8.13-macosx.zip) (10.10 ou plus récent)
  
