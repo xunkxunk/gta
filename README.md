@@ -49,12 +49,13 @@ Nous allons le configurer afin qu'il puisse échanger correctement le(s) program
 Enfin, nous allons préparer le logiciel, en installant différent composants spécifiques à notre carte Arduino (MKRFox1200), ainsi qu'aux différents programme que nous allons avoir besoin dans la suite du tutoriel.
 
 ### 2.1 Télécharger
-Vous pouvez le télécharger depuis https://www.arduino.cc/en/software
 
-Ou choisir votre programme selon votre système (/!\ Attention, les liens ci-dessous ne sont peut-être plus à jour):
-- Windows 7 et suivant : [Executable (.exe)](https://downloads.arduino.cc/arduino-1.8.13-windows.exe) ou [Archive (.zip)](https://downloads.arduino.cc/arduino-1.8.13-windows.zip)
-- [Linux 64 bits](https://downloads.arduino.cc/arduino-1.8.13-linux64.tar.xz)
-- [Mac OS X](https://downloads.arduino.cc/arduino-1.8.13-macosx.zip) (10.10 ou plus récent)
+Vous pouvez télécharger le logiciel __Arduino IDE__ de deux façons:
+- Depuis le site https://www.arduino.cc/en/software (Attention de ne __pas__ prendre la version Windows App pour 8.1 / 10)
+- Choisir votre programme selon votre système (/!\ Attention, les liens ci-dessous ne sont peut-être plus à jour):
+	- Windows 7: [Executable (.exe)](https://downloads.arduino.cc/arduino-1.8.13-windows.exe) ou [Archive (.zip)](https://downloads.arduino.cc/arduino-1.8.13-windows.zip)
+	- [Linux 64 bits](https://downloads.arduino.cc/arduino-1.8.13-linux64.tar.xz)
+	- [Mac OS X](https://downloads.arduino.cc/arduino-1.8.13-macosx.zip) (10.10 ou plus récent)
  
 ### 2.2 Configurer
 #### 2.2.1 Ajouter le noyau SAMD Core
