@@ -78,11 +78,15 @@ Maintenant il faut télécharger et installer les librairies que j'ai utilisées
 De la même facon que le Noyau permet au logiciel de parler la même langue que la carte, les librairies vont permettent d'étendre les capacités de nos programmes.
 Nous pourrons alors faire des taches plus spécifique que "Faire clignoter la carte Arduino", comme "Envoyer un signal via le réseau SigFox".
 
-Les librairies se trouvent dans l'archive [librairies.zip](https://www.dropbox.com/sh/i5s8ciy7g694kg1/AAD1p8ZgO66AvzONasxKT_Pza/libraries/libraries.zip?dl=1) (protégée par mot de passe)
+Les librairies peuvent se télécharger en cliquant sur le lien suivant: [librairies.zip](https://www.dropbox.com/sh/i5s8ciy7g694kg1/AAD1p8ZgO66AvzONasxKT_Pza/libraries/libraries.zip?dl=1) (protégée par mot de passe)
 
-Une fois téléchargé, copier le contenu du ZIP dans un dossier qu'on nomme _emplacement du carnet de croquis_, par exemple dans  __D:\Arduino__ (cf. ci dessous)
+Une fois le fichier d'archive __librairies.zip__ téléchargé (probablement dans votre dossier "Téléchargement"):
+- Cliquer droit sur le fichier d'archive __librairies.zip__ et faites extraire le contenu.
+- Vous devriez obtenir un dossier nommé _librairies_, qui contient différents sous dossiers (Adafruit_BME280_Library,  Adafruit_BusIO, etc...)
+- Copier l'ensemble de ces sous-dossiers dans un emplacement, par exemple dans  __D:\Arduino__ (cf. ci dessous)
+- Vous devriez avoir a ce point, dans un dossier (ici __D:\Arduino__) l'ensemble des sous-dossiers cité plus haut. 
 
-Cliquer droit sur l'archive librairies.zip et faites extraire le contenu.
+Ce dossier, dans le logiciel __Arduino IDE__ est appelé __«Emplacement du carnet de croquis»__
 
 De retour dans le logiciel Aduino IDE; 
 
@@ -95,6 +99,8 @@ De retour dans le logiciel Aduino IDE;
 ![Menu préférence](blob/master/prefe.png)
 
 Cocher __OK__
+
+Note: En cliquant sur _Parcourir_ vous devriez directement voir les différents sous-dossiers (Adafruit_BME280_Library,  Adafruit_BusIO, etc...)
 
 __Les libraires sont maintenant installées.__
 
@@ -137,10 +143,10 @@ Toujours dans le logiciel __Arduino IDE__;
 ![Exemple basic - Blink](blob/master/exemple_basic.png) 
 
 
-Vérifier (1er bouton)
+Vérifier (1er bouton):
 ![Vérifier](blob/master/veriff.png) 
 
-Puis Téléverser (2ième bouton ou Ctrl + U) votre premier programme :
+Puis Téléverser (2ième bouton ou Ctrl + U) votre premier programme:
 ![Téléverser](blob/master/televerser.png) 
 
 ### 2.4 Tutoriels
@@ -190,7 +196,8 @@ Pour plus de détails sur l'Arduino MKRFOX1200, consultez [la page produit](http
 
 ## 3. Réglage du taux de transfert des données
 
-Brancher l’arduino MKRFOX1200 avec un cable USB 2.0 – micro-USB qui véhicule les donnée.
+Brancher l’Arduino MKRFOX1200 avec un câble USB 2.0 – micro-USB qui véhicule les données.
+Pour que les changements suivant soit possible, il est important que le logiciel __Arduino IDE__ soit fermé.
 
 Chercher  « Gestionnaire des périphériques » sur votre PC (barre de recherche)
 - Allez dans __Ports (COM et LPT)__
@@ -214,7 +221,14 @@ Pour créer un compte Sigfox, nous avons besoin de deux informations:
 	Chaque fois que vous enregistrez un appareil dans le backend, la clé PAC est remplacée par une nouvelle.
 	La carte Arduino MKR Fox 1200 Sigfox stocke l'__ID__ et le __PAC__ dans la mémoire du module Sigfox, nous devons donc créer une courte esquisse pour extraire ces informations et créer notre compte Sigfox.
 
-Vous pouvez compiler / télécharger (cf [2.3 Votre premier croquis](#23-Votre-premier-croquis)) le croquis suivant sur la carte et cliquer sur Serial Monitor pour voir le résultat:
+Afin d'obtenir ces informations, nous allons demander à la carte d'exécuter un programme C (un croquis), et afficher les données que la carte nous retourne.
+
+Pour ce faire, de la même façon que vu dans la partie [2.3 Votre premier croquis](#23-Votre-premier-croquis), nous allons :
+- __Vérifier__ (Compiler) le programme
+- __Téléverser__ (Envoyer) le programme sur la carte
+- Récupérer/afficher les résultats
+
+Copier le programme suivant dans le logiciel __Arduino IDE__, puis __Vérifier__ & __Téléverser__ le sur la carte.
 ```C
 #include <RTCZero.h>
 #include <ArduinoLowPower.h>
