@@ -104,6 +104,9 @@ Note: En cliquant sur _Parcourir_ vous devriez directement voir les différents 
 
 __Les libraires sont maintenant installées.__
 
+Vous devez avoir selon cette exemple quelque chose comme ca : D:\Arduino\libraries (avec les différents répertoires de librairies à l'intérieur)
+!!! écrivez bien "libraries" c'est en anglais. 
+
 Si le programme fait une erreur de compilation. Il est possible qu'il faille mettre à jour les __libraries__ . Dans ce cas là aller dans __Outils__ puis __Gérer les bibliothèques__ puis une fenêtre s'ouvre avec l'ensemble des librairies. Dans __Type__ sélectionner __Possible de mettre à jour__. L'ensemble des librairies à mettre à jour seront listé. Cliquer sur __Mise à jour__ pour chacune. Une fois toutes les librairies mise à jour, cliquer sur __Fermer__ . Puis réessayer de compiler.
 
 ![Mise à jour des librairies](blob/master/maj.png)
