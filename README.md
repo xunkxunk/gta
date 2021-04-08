@@ -12,7 +12,17 @@
 	5. [Notes importantes](#25-notes-importantes)
 3. [Réglage du taux de transfert des données](#3-Réglage-du-taux-de-transfert-des-données)
 4. [Création d'un compte SIGFOX](#4-Création-dun-compte-SIGFOX)
-
+5. [Exécutez votre premier programme Arduino en utilisant Sigfox (optionnel)](#5-Exécutez-votre-premier-programme-Arduino-en-utilisant-Sigfox)
+	1. [Programmes](#51-Programmes)
+	2. [Communication bi-directionelle (Pour les curieux !)](#52-communication-bi-directionelle-pour-les-curieux-)
+6. [Préparation](#6-Préparation)
+	1. [Récupérer la librairie balance](#61-Récupérer-la-librairie-balance) 
+	2. [Récupérer le programme](#62-récupérer-le-programme)
+	3. [Préparation de l'étalonnage](#63-Préparation-de-l%C3%A9talonnage)
+7. [Etalonnage](#7-Etalonnage)
+8. [balance.serviteurs.org](#8-Site-balances)
+9. [Configuration du callback sigfox](#9-Configuration-backend-sigfox)
+10. [Renouvellement de l’abonnement après un an](#10-Renouvellement-de-labonnement-après-un-an)
 
 ## 1. Bibliographie
 Dans cette section, différents lien vers des sites internet relatifs au projet
