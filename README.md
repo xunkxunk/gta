@@ -717,18 +717,18 @@ Vous pouvez aussi portez la ruche et vous peser avec, puis vous pesez sans. La d
 
 #### 6.3.2 un poids important de plus de 50 kilo ; ce sera la limite haute
 
-__Les_sauts__
+__Les_seaux__
 j'ai opté pour des sauts remplis d'eau que je peux empiler. Je pose mes sauts sur le pèse personne, je les numérotes et je pèse dans les différentes configurations.
 
 Exemple : 
-saut 1 : 14,98 kg 
-saut 2 : 14,95 kg
-saut 3 : 14,94 kg
-saut 4 : 14,96 kg
-poids 1 = saut 1
-poids 2 = saut 1 + saut 2
+seau 1 : 14,98 kg 
+seau 2 : 14,95 kg
+seau 3 : 14,94 kg
+seau 4 : 14,96 kg
+poids 1 = seau 1
+poids 2 = seau 1 + seau 2
 ...
-poids n = saut 1 + saut 2 + saut 3 + saut 4
+poids n = seau 1 + seau 2 + seau 3 + seau 4
 
 ![Balance avec le poids P2](blob/master/poids40.png)
 
