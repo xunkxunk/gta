@@ -1068,7 +1068,7 @@ __Type DATA BIDIR__
 
 __CHANNEL  URL__
 
-__Url pattern : https://balances.serviteurs.org/valeurs/balances?id={device}&time={time}&data={data}&snr={snr}&time={time}&longPolling={longPolling}&seqNumber={seqNumber}&ack={ack}__
+__Url pattern : https://balances.serviteurs.org/valeurs/balances?id={device}&time={time}&data={data}&time={time}&longPolling={longPolling}&seqNumber={seqNumber}&ack={ack}__
 
 __Use HTTP method GET__
 
